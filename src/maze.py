@@ -166,13 +166,13 @@ class Maze:
             print(self.visited_path_j)
             del self.visited_path_i[-1]
             del self.visited_path_j[-1]
-            if len(self.visited_path_j) > 2:
-                del self.visited_path_i[-2]
-                del self.visited_path_j[-2]
-                aux_i = self.visited_path_i[-2]
-                aux_j = self.visited_path_j[-2]
-                return self._solve_r(aux_i, aux_j)
-            return
+            
+            aux_i = self.visited_path_i[-2]
+            aux_j = self.visited_path_j[-2]
+            del self.visited_path_i[-2]
+            del self.visited_path_j[-2]
+            return self._solve_r(aux_i, aux_j)
+            
 
         print("Victory!")
 
